@@ -55,7 +55,7 @@ export default function Auth({ onAuth }) {
     <div className="auth-page">
       <div className="auth-masthead">
         <div className="auth-rule-top" />
-        <h1 className="auth-title">The Neighbourhood<br /><em>Bookstand</em></h1>
+        <h1 className="auth-title">The Neighbourhood <br /> Bookstand</h1>
         <p className="auth-tagline">Your personal stand for books</p>
         <div className="auth-rule-bottom" />
       </div>

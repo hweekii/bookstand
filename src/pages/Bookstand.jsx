@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../supabase'
-import AddBookModal from '/AddBookModal'
-import AddToWishlistModal from '/AddToWishlistModal'
-import BookReactions from '/BookReactions'
+import AddBookModal from './AddBookModal'
+import AddToWishlistModal from './AddtoWishlistModal'
+import BookReactions from './BookReactions'
 
 function stars(n) {
   return '★'.repeat(n) + '☆'.repeat(5 - n)

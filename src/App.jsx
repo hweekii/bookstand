@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import { supabase } from '/supabase'
-import Auth from '/pages/Auth'
-import Bookstand from '/pages/Bookstand'
-import Friends from '/pages/Friends'
-import '/App.css'
+import { supabase } from './supabase'
+import Auth from './pages/Auth'
+import Bookstand from './pages/Bookstand'
+import Friends from './pages/Friends'
+import './App.css'
 
 export default function App() {
   const [currentUser, setCurrentUser] = useState(null)   // profile row

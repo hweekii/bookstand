@@ -110,10 +110,11 @@ body::before {
 
 .auth-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(48px, 10vw, 80px);
-  font-weight: 900; line-height: 0.9; letter-spacing: -2px;
+  font-size: clamp(48px, 10vw, 60px);
+  font-weight: 700; line-height: 0.9; letter-spacing: -2px;
+  font-style: italic;
+  color: var(--accent);
 }
-.auth-title em { font-style: italic; color: var(--accent); font-weight: 700; }
 
 .auth-tagline {
   font-family: 'IM Fell English', serif; font-style: italic;
