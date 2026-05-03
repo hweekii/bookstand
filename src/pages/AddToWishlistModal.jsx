@@ -76,7 +76,7 @@ export default function AddToWishlistModal({ onSave, onClose }) {
 
           {!selected ? (
             <div className="modal-field" ref={dropdownRef} style={{ position: 'relative' }}>
-              <label>Search for a book *</label>
+              <label>Search for a book</label>
               <div className="search-input-wrap">
                 <input
                   type="text"

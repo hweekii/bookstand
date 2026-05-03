@@ -41,9 +41,7 @@ export default function AddBookModal({ onSave, onClose, existing }) {
 
   useEffect(() => {
     if (existing || !query.trim() || query.length < 2) {
-      setSuggestions([])
-      setShowDropdown(false)
-      return
+      setSuggestions([]); setShowDropdown(false); return
     }
     clearTimeout(debounceRef.current)
     debounceRef.current = setTimeout(async () => {
@@ -65,22 +63,17 @@ export default function AddBookModal({ onSave, onClose, existing }) {
         })
         setSuggestions(books)
         setShowDropdown(books.length > 0)
-      } catch (e) {
-        console.error('Google Books error', e)
-      }
+      } catch (e) { console.error('Google Books error', e) }
       setSearching(false)
     }, 350)
   }, [query])
 
   function selectSuggestion(book) {
     setSelected(book)
-    setTitle(book.title)
-    setAuthor(book.author)
-    setGenre(book.genre)
-    setThumbnail(book.thumbnail || '')
+    setTitle(book.title); setAuthor(book.author)
+    setGenre(book.genre); setThumbnail(book.thumbnail || '')
     setQuery(book.title)
-    setShowDropdown(false)
-    setSuggestions([])
+    setShowDropdown(false); setSuggestions([])
   }
 
   function clearSelection() {
@@ -103,7 +96,7 @@ export default function AddBookModal({ onSave, onClose, existing }) {
           {/* Search or selected card */}
           {!selected ? (
             <div className="modal-field" ref={dropdownRef} style={{ position: 'relative' }}>
-              <label>Search for a book *</label>
+              <label>Search for a book</label>
               <div className="search-input-wrap">
                 <input
                   type="text"
@@ -150,7 +143,6 @@ export default function AddBookModal({ onSave, onClose, existing }) {
             </div>
           )}
 
-          {/* Rest of form — only shown once book is picked */}
           {(selected || existing) && (
             <>
               <div className="modal-field">
@@ -196,12 +188,17 @@ export default function AddBookModal({ onSave, onClose, existing }) {
                 />
               </div>
 
+              {/* Updated label — all-time favourite, not per-edition headline */}
               <div className="modal-field modal-headline-toggle">
                 <label className="toggle-label">
-                  <input type="checkbox" checked={isHeadline} onChange={e => setIsHeadline(e.target.checked)} />
-                  <span>Feature on front page</span>
+                  <input
+                    type="checkbox"
+                    checked={isHeadline}
+                    onChange={e => setIsHeadline(e.target.checked)}
+                  />
+                  <span> All-time favourite</span>
                 </label>
-                <p className="toggle-hint">Front page books appear as headlines in your edition</p>
+                <p className="toggle-hint">Feature this book on your front page alongside your other favourites</p>
               </div>
             </>
           )}
